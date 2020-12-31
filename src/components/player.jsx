@@ -4,6 +4,11 @@ import {faPlay, faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-ico
 
 
 const Player = () => {
+	function handlePlayClick() {
+		// var audio = new Audio('https://github.com/danieltkach/react-player/blob/main/public/mp3/Last%20Tears.mp3');
+		var audio = new Audio('./mp3/LastTears.mp3');
+		audio.play();
+	}
 	return (
 		<div className="player">
 			<div className="time-control">
@@ -13,7 +18,7 @@ const Player = () => {
 			</div>
 			<div className="play-control">
 				<FontAwesomeIcon className="skip-back" size="2x" icon={faAngleLeft} />
-				<FontAwesomeIcon className="play" size="2x" icon={faPlay} />
+				<FontAwesomeIcon onClick={handlePlayClick} className="play" size="2x" icon={faPlay} />
 				<FontAwesomeIcon className="skip-forward" size="2x" icon={faAngleRight} />
 			</div>
 		</div>
