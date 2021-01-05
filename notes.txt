@@ -1,0 +1,28 @@
+  className={isPlaying ? "imageOff" : "imageOn"}
+        alt={currentSong.name}
+        src={currentSong.cover}
+      >
+      on the img tag
+You need to pass in the isPlaying to the song class and then what the code is saying is: if the music is playing set the class of the image to one where the image is rotating and if not change it to one where its not.
+
+The css looks like: 
+img {
+    width: 40%;
+    border-radius: 50%;
+    animation: spin 10s linear infinite;
+    animation-play-state: paused;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .imageOn {
+    animation-play-state: paused;
+  }
+  .imageOff {
+    animation-play-state: running;
+  }
