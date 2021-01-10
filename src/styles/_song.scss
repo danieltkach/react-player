@@ -4,14 +4,41 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	
 	img{
 		width: 20%;
 		border-radius: 50%;
+		animation: spin 10s linear infinite;
+		animation-play-state: paused;
 	}
+	@keyframes spin {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+	.rotationOff {
+		animation-play-state: paused;
+	}
+	.rotationOn {
+		animation-play-state: running;
+	}
+
+
 	h2{
 		padding: 3rem 1rem 1rem 1rem;
 	}
 	h3{
 		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.song-container {
+		img {
+			width: 60%;
+		}
 	}
 }
